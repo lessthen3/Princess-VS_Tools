@@ -1,0 +1,21 @@
+# Visual Studio
+/.vs
+**.sln
+**.vcxproj
+**.vcxproj.user
+**.vcxproj.filters
+
+# Testing Directory
+/tests
+
+# Build Output
+/build
+
+# Logs
+/logs
+
+# JSON
+**.json
+
+#MacOS specific
+**.DS_Store
