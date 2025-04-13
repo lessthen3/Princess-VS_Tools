@@ -131,6 +131,16 @@ if(APPLE ) #link moltenVK for mac compatibility
     target_link_libraries(${PROJECT_NAME} PUBLIC
         moltenVK
     )
+elseif(WIN32)
+    target_link_libraries(${PROJECT_NAME} PRIVATE 
+        setupapi 
+        version 
+        imm32 
+        winmm 
+        gdi32 
+        user32 
+        kernel32
+    ) #needed for statically linking SDL3
 endif()
 
 target_link_libraries(${PROJECT_NAME} PUBLIC

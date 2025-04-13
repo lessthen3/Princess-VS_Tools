@@ -9,15 +9,20 @@
 /*** GitHub: https://github.com/iLoveJohnFish/Peach-E ***/
 /////////////////////////////////////////////////////////
 #pragma once
+
 #include <vector>
 #include "../BlockNode.h"
+#include "../Logger.h"
+
 
 namespace Princess {
 
-    struct ExecutionParser {
+    struct ExecutionParser 
+    {
 
     public:
-        static ExecutionParser& Parser() {
+        static ExecutionParser& Parser() 
+        {
             static ExecutionParser instance;
             return instance;
         }

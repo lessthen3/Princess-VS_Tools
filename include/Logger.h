@@ -165,16 +165,16 @@ namespace Princess {
     };
 
     //////////////////////////////////////////////
-    // LogManager Class
+    // Logger Class
     //////////////////////////////////////////////
 
-    class LogManager
+    class Logger
     {
     //////////////////////////////////////////////
     // Public Destructor
     //////////////////////////////////////////////
     public:
-        ~LogManager() ///XXX: Just copy and pasted the flushalllogs method because they have the assert at the beginning and wont work with premature exit
+        ~Logger() ///XXX: Just copy and pasted the flushalllogs method because they have the assert at the beginning and wont work with premature exit
         {
             for (auto& _f : pm_LogFiles)
             {
@@ -191,7 +191,7 @@ namespace Princess {
     // Public Constructor
     //////////////////////////////////////////////
     public:
-        LogManager() = default;
+        Logger() = default;
 
     ////////////////////////////////////////////////
     // Helper Enum For LogLevel Specification
@@ -237,7 +237,7 @@ namespace Princess {
         {
             if (pm_HasBeenInitialized) //stops accidental reinitialization of logmanager
             {
-                PrintError("LogManager has already been initialized, LogManager is only allowed to initialize once per run");
+                PrintError("Logger has already been initialized, Logger is only allowed to initialize once per run");
                 return false;
             }
 
@@ -255,7 +255,7 @@ namespace Princess {
                 }
                 catch (const exception& f_Exception)
                 {
-                    PrintError(format("An exception was thrown inside LogManager: {}", f_Exception.what()));
+                    PrintError(format("An exception was thrown inside Logger: {}", f_Exception.what()));
                     return false;
                 }
             }
@@ -305,13 +305,13 @@ namespace Princess {
         {
             if (fp_DesiredLogLevels.size() == 0)
             {
-                PrintError("LogManager tried to initialize with no value for specific log filtering");
+                PrintError("Logger tried to initialize with no value for specific log filtering");
                 return false;
             }
 
             if (pm_HasBeenInitialized) //stops accidental reinitialization of logmanager
             {
-                PrintError("LogManager has already been initialized, LogManager is only allowed to initialize once per run");
+                PrintError("Logger has already been initialized, Logger is only allowed to initialize once per run");
                 return false;
             }
 
@@ -329,7 +329,7 @@ namespace Princess {
                 }
                 catch (const exception& ex)
                 {
-                    PrintError(format("An exception was thrown inside LogManager: {}", ex.what()));
+                    PrintError(format("An exception was thrown inside Logger: {}", ex.what()));
                     return false;
                 }
             }
@@ -353,7 +353,7 @@ namespace Princess {
         }
 
         inline void ///XXX: used for testing, this method should never call exit() for a production release, since all logging is hidden away from the game engine dev
-            AssertThreadAccess(const string& fp_FunctionName) //we don't require a lock since this method guarantees only one thread is operating on any data within the LogManager instance
+            AssertThreadAccess(const string& fp_FunctionName) //we don't require a lock since this method guarantees only one thread is operating on any data within the Logger instance
             const
         {
             if (this_thread::get_id() != pm_ThreadOwnerID)
@@ -362,7 +362,7 @@ namespace Princess {
                 f_UckCPP << this_thread::get_id();
                 string f_CallerThreadID = f_UckCPP.str();
 
-                PrintError(format("LogManager method '{}' called from the wrong thread, [Caller Thread ID]: {}. Exiting...", fp_FunctionName, f_CallerThreadID));
+                PrintError(format("Logger method '{}' called from the wrong thread, [Caller Thread ID]: {}. Exiting...", fp_FunctionName, f_CallerThreadID));
                 
                 exit(-69);
             }
@@ -475,7 +475,7 @@ namespace Princess {
                     PrintError(Log(fp_Message, fp_Sender, "fatal"), Colours::BrightMagenta);
                     break;
                 default:
-                    PrintError(Log("Did not input a valid option for log level in LogAndPrint()", "LogManager", "error"));
+                    PrintError(Log("Did not input a valid option for log level in LogAndPrint()", "Logger", "error"));
                     Print(Log(fp_Message, fp_Sender, "error"));
             }
         }

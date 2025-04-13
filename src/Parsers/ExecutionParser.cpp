@@ -9,9 +9,6 @@
 /*** GitHub: https://github.com/iLoveJohnFish/Peach-E ***/
 /////////////////////////////////////////////////////////
 #include "../../include/Parsers/ExecutionParser.h"
-#include "../../include/LogManager.h"
-
-using namespace std;
 
 namespace Princess {
 
