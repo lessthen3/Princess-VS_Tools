@@ -1,5 +1,5 @@
 # Princess VS Tools
-Princess is an open-source and cross-platform visual scripting tool built with modern C++ 20 licensed under the permissive MIT License. 
+Princess is a free, open-source, and cross-platform visual scripting tool built with modern C++ 20 licensed under the permissive MIT License. 
 
 Currently you can target Windows, macOS and Linux. Princess may work on UNIX systems, but support isn't guaranteed.
 
@@ -12,6 +12,8 @@ Docs are still a work in progress, but expect them to be here by the time Prince
 
 ## Features
 
+👑 Compiles visual script -> text so that any code built within Princess can be run outside the visual scripting environment
+
 👑 Scripting support for Python and Lua out of the box
 
 👑 Native support for Windows, macOS, and Linux
@@ -19,8 +21,6 @@ Docs are still a work in progress, but expect them to be here by the time Prince
 👑 External plugin support via custom Python scripts
 
 👑 Custom themes out of the box, and blank theme template provided for anyone that wants to make one themselves
-
-👑 Compiles visual script -> text so that any code built within Princess can be run outside the visual scripting environment
 
 👑 Build systems can be built into Princess using Python scripts
 
@@ -43,13 +43,13 @@ If you want to build Princess for yourself:
 
 ## Motivation
 
-I learned about visual scripting from Scratch, and I really enjoy using Blender's shader graph so naturally I looked for an equivalent tool that would allow me to program connecting code nodes together to make something cool. However my search showed me theres a huge gap in the market for accessible coding tools like visual scripting.
+I learned about visual scripting from Scratch (although I've never used Scratch before), and I really enjoy using Blender's shader graph so naturally I looked for an equivalent tool that would allow me to program connecting code nodes together to make something cool. However it quickly became apparent that theres a huge gap in the market for accessible, visually driven coding tools.
 
-As a result I decided to be the one to take the plunge and create an easy, good looking and versatile editor for visual scripting. That's where Princess comes in!
+As a result I decided to take matters into my own hands and create an easy, good looking and versatile editor for visual scripting. That’s how Princess was born!
 
-I'm hoping that Princess can be as user friendly as VS code, and have just as much if not more customizability 😊
+I'm hoping that Princess can be as user friendly as VS code, with all the customizability that I crave 😊
 
-Visual scripting is cool, and I don't feel like it's taken very seriously. Using a tool like Princess can be a great introduction to coding or just a nice way of coding for people who are tired of text editors or just give someone an epiphany that they actually love coding more when visualy scripting.
+Visual scripting is cool, and I don't feel like it's taken very seriously. Princess can be a great entry point for new coders or a refreshing alternative for those tired of plain text editors. Maybe even for people who don't think they can code, you might find that coding is awesome when you see it come to life visually.
 
 My goal with Princess is to make coding more fun, while looking drop dead gorgeous >w<
 
